@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Fontes/dogicapixel.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Artes/Dialogo/Caixa de texto.png" type="Texture" id=2]
+[ext_resource path="res://Artes/Dialogo/Caixa com nome.png" type="Texture" id=2]
 [ext_resource path="res://Codigos/Dialogo_semnome.gd" type="Script" id=3]
 [ext_resource path="res://continuar_dialogo.png" type="Texture" id=4]
 
@@ -16,6 +16,10 @@ font_data = ExtResource( 1 )
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 3.25
+margin_top = -4.5
+margin_right = 3.25
+margin_bottom = -4.5
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -36,9 +40,9 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="TextureRect"]
 margin_left = 6.0
-margin_top = 11.0
+margin_top = 22.5
 margin_right = 314.0
-margin_bottom = 57.0
+margin_bottom = 68.5
 custom_fonts/font = SubResource( 1 )
 text = "aaaa"
 __meta__ = {
@@ -51,3 +55,12 @@ margin_top = 35.4454
 margin_right = 316.125
 margin_bottom = 59.4454
 texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 38.0
+margin_top = 143.397
+margin_right = 88.0
+margin_bottom = 157.397
+__meta__ = {
+"_edit_use_anchors_": false
+}
