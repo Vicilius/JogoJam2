@@ -18,6 +18,15 @@ _global_script_class_icons={
 config/name="HurryExplosions"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=384
+window/size/height=216
+window/size/test_width=1344
+window/size/test_height=756
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
