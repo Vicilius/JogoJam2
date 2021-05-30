@@ -24,7 +24,6 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-dialogPath = "C:\\Users\\vinic\\Desktop\\Godot_projects\\Git\\JogoJam2\\Explosions\\Dialogo\\Dialogo_1.json"
 
 [node name="Timer" type="Timer" parent="."]
 
