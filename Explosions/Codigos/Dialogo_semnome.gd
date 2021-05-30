@@ -1,6 +1,7 @@
 extends Control
 
-export var dialogPath = ""
+
+var dialogPath = "res://Dialogo/Dialogo_1.json"
 export(float) var textSpeed = 0.05
 
 var dialog
@@ -61,7 +62,7 @@ func nextPhrase() -> void:
 	
 	
 	
-	
+	#get_tree().change_scene("res://Dialogo/Dialogo_1.json")
 	
 	while $TextureRect/Label.visible_characters < len($TextureRect/Label.text):
 		$TextureRect/Label.visible_characters += 1
