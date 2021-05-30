@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Caixa com nome.png-4160f6b32705add621a62b0cd4c22810.stex"
+path="res://.import/Seta Dialogo1.png-c37de2462d668a8a4899c79e228f9336.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Artes/Dialogo/Caixa com nome.png"
-dest_files=[ "res://.import/Caixa com nome.png-4160f6b32705add621a62b0cd4c22810.stex" ]
+source_file="res://Artes/Dialogo/Seta/Seta Dialogo1.png"
+dest_files=[ "res://.import/Seta Dialogo1.png-c37de2462d668a8a4899c79e228f9336.stex" ]
 
 [params]
 

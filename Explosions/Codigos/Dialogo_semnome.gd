@@ -18,7 +18,7 @@ func _ready():
 	
 	
 func _process(delta):
-	$TextureRect/NinePatchRect.visible = finished
+	$TextureRect/AnimatedSprite.visible = finished
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		if finished:
