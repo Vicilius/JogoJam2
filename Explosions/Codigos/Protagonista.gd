@@ -36,7 +36,7 @@ func _physics_process(delta):
 				$AnimatedSprite.play("awake")
 				wkng = true
 				slpng = false
-				
+				$awake.start()
 			if $AnimatedSprite.animation == "awake" && $AnimatedSprite.frame == 2:
 				wkng = false
 				slp = false
@@ -55,4 +55,10 @@ func _input(event):
 func _on_sono_timeout():
 	slp = true
 	#$sono.wait_time = 0
+	pass # Replace with function body.
+
+
+func _on_awake_timeout():
+	wkng = false
+	slp = false
 	pass # Replace with function body.
