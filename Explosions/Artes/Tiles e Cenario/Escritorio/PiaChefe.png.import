@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Wardrobe2.png-6293fad2bd3bd459012c53413955f9fd.stex"
+path="res://.import/PiaChefe.png-1acd4ddfbfd75661fd3dd49c10e6eba3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Artes/Tiles e Cenario/Armario/Wardrobe2.png"
-dest_files=[ "res://.import/Wardrobe2.png-6293fad2bd3bd459012c53413955f9fd.stex" ]
+source_file="res://Artes/Tiles e Cenario/Escritorio/PiaChefe.png"
+dest_files=[ "res://.import/PiaChefe.png-1acd4ddfbfd75661fd3dd49c10e6eba3.stex" ]
 
 [params]
 

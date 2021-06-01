@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Wardrobe1.png-b42b4c42fb358835ae2ce8312c8927f9.stex"
+path="res://.import/Mesa dos petiscos.png-a6604fc00339540e212fb0d01bff8113.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Artes/Tiles e Cenario/Armario/Wardrobe1.png"
-dest_files=[ "res://.import/Wardrobe1.png-b42b4c42fb358835ae2ce8312c8927f9.stex" ]
+source_file="res://Artes/Tiles e Cenario/Festa/Mesa dos petiscos.png"
+dest_files=[ "res://.import/Mesa dos petiscos.png-a6604fc00339540e212fb0d01bff8113.stex" ]
 
 [params]
 

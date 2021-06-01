@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Nightstand1.png-4dfce223e4ff3a304efd4f9d2f8b38b3.stex"
+path="res://.import/Nightstand2.png-ada44e9ee8260725f8516acc0c242d41.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Artes/Tiles e Cenario/Escrivaninha/Nightstand1.png"
-dest_files=[ "res://.import/Nightstand1.png-4dfce223e4ff3a304efd4f9d2f8b38b3.stex" ]
+source_file="res://Artes/Tiles e Cenario/Escritorio/Escrivaninha/Nightstand2.png"
+dest_files=[ "res://.import/Nightstand2.png-ada44e9ee8260725f8516acc0c242d41.stex" ]
 
 [params]
 
