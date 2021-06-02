@@ -8,7 +8,21 @@ var wkng = false
 var walking = false
 var left = false
 
+func _ready():
+	
+	var tilemap_rect = get_parent().get_node("TileMap").get_used_rect()
+	var tilemap_cell = get_parent().get_node("TileMap").cell_size
+	$Camera2D.limit_left = tilemap_rect.position.x * tilemap_cell.x
+	$Camera2D.limit_right = tilemap_rect.end.x * tilemap_cell.x
+	$Camera2D.limit_top = tilemap_rect.position.y * tilemap_cell.y
+	$Camera2D.limit_bottom = tilemap_rect.end.y * tilemap_cell.y
+	
+	pass
+
 func _physics_process(delta):
+	
+
+	
 	var x = - Input.get_action_strength("ui_left") + Input.get_action_strength("ui_right")
 	var y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	speed = Vector2(x, y).normalized()*ACCELERACAO

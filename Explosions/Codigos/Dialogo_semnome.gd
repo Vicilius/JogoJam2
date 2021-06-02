@@ -18,6 +18,16 @@ func _ready():
 	
 	
 func _process(delta):
+	
+	if(get_parent().get_node("Player").position.x -192 >= get_parent().get_node("Player").get_node("Camera2D").limit_left
+	&& get_parent().get_node("Player").position.x +192 <= get_parent().get_node("Player").get_node("Camera2D").limit_right):
+		margin_left = get_parent().get_node("Player").position.x - 190
+	
+	if(get_parent().get_node("Player").position.y -108 >= get_parent().get_node("Player").get_node("Camera2D").limit_top
+	&& get_parent().get_node("Player").position.y +108 <= get_parent().get_node("Player").get_node("Camera2D").limit_bottom) :
+		margin_top = get_parent().get_node("Player").position.y - 100
+	
+	
 	$TextureRect/AnimatedSprite.visible = finished
 	
 	if Input.is_action_just_pressed("ui_accept"):
