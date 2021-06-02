@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Cenas/Protagonista.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Cenas/mapa.tscn" type="PackedScene" id=2]
@@ -13,6 +13,9 @@
 [ext_resource path="res://Artes/Tiles e Cenario/Escritorio/Mesa de escritorio1.png" type="Texture" id=11]
 [ext_resource path="res://Artes/Tiles e Cenario/Escritorio/Mesa de escritorio2.png" type="Texture" id=12]
 [ext_resource path="res://Artes/Tiles e Cenario/Survive_the_Dungeon_itens.png" type="Texture" id=13]
+[ext_resource path="res://Artes/Tiles e Cenario/Festa/balão.png" type="Texture" id=14]
+[ext_resource path="res://Artes/Tiles e Cenario/Festa/Mesa dos petiscos.png" type="Texture" id=15]
+[ext_resource path="res://Artes/Tiles e Cenario/Festa/Caixa de som.png" type="Texture" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
@@ -35,11 +38,26 @@ extents = Vector2( 15, 22 )
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 4, 4 )
 
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 7, 5 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 5, 5 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 3, 2 )
+
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 8, 8 )
 
+[sub_resource type="OccluderPolygon2D" id=19]
+polygon = PoolVector2Array( 0, -3.05176e-05, 16, -3.05176e-05, 16, 12, 0, 12 )
+
 [sub_resource type="CircleShape2D" id=9]
 radius = 7.0
+
+[sub_resource type="OccluderPolygon2D" id=20]
+polygon = PoolVector2Array( 0, 1.00002, 16, 1.00002, 16, -8.99998, -2, -8.99998, -2, 1.00002 )
 
 [sub_resource type="ConvexPolygonShape2D" id=10]
 points = PoolVector2Array( 1.8699, 2.05683, 14.0202, 2.05683, 14.0202, 15.0483, 1.8699, 15.0483 )
@@ -172,6 +190,9 @@ tile_data = PoolIntArray( -2031618, 0, 0, -2031617, 0, 1, -2097152, 0, 1, -20971
 position = Vector2( 128, 112 )
 
 [node name="Decoração" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="PiaChefe" type="StaticBody2D" parent="Decoração"]
 
@@ -351,9 +372,9 @@ texture = ExtResource( 6 )
 position = Vector2( 0, 4 )
 shape = SubResource( 5 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Decoração"]
+[node name="Escritorio chefe" type="StaticBody2D" parent="Decoração"]
 
-[node name="Mesa Chefe" type="Sprite" parent="Decoração/StaticBody2D"]
+[node name="Mesa Chefe" type="Sprite" parent="Decoração/Escritorio chefe"]
 position = Vector2( 48, -432 )
 texture = ExtResource( 9 )
 centered = false
@@ -361,7 +382,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CadeiraChefe" type="Sprite" parent="Decoração/StaticBody2D"]
+[node name="CadeiraChefe" type="Sprite" parent="Decoração/Escritorio chefe"]
 position = Vector2( 32, -416 )
 texture = ExtResource( 10 )
 centered = false
@@ -369,13 +390,199 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Decoração/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decoração/Escritorio chefe"]
 position = Vector2( 65, -406 )
 shape = SubResource( 6 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Decoração/StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Decoração/Escritorio chefe"]
 position = Vector2( 41, -407 )
 shape = SubResource( 7 )
+
+[node name="Mesas de salgadinho" type="StaticBody2D" parent="Decoração"]
+
+[node name="Mesa dos petiscos" type="Sprite" parent="Decoração/Mesas de salgadinho"]
+position = Vector2( 331, 93 )
+texture = ExtResource( 15 )
+
+[node name="Mesa dos petiscos2" type="Sprite" parent="Decoração/Mesas de salgadinho"]
+position = Vector2( 69, 84 )
+texture = ExtResource( 15 )
+
+[node name="Mesa dos petiscos3" type="Sprite" parent="Decoração/Mesas de salgadinho"]
+position = Vector2( 65, 171 )
+texture = ExtResource( 15 )
+
+[node name="Mesa dos petiscos4" type="Sprite" parent="Decoração/Mesas de salgadinho"]
+position = Vector2( 171, 182 )
+texture = ExtResource( 15 )
+
+[node name="Mesa dos petiscos5" type="Sprite" parent="Decoração/Mesas de salgadinho"]
+position = Vector2( 330, 180 )
+texture = ExtResource( 15 )
+
+[node name="Mesa dos petiscos6" type="Sprite" parent="Decoração/Mesas de salgadinho"]
+position = Vector2( 300, 46 )
+texture = ExtResource( 15 )
+
+[node name="Mesa dos petiscos7" type="Sprite" parent="Decoração/Mesas de salgadinho"]
+position = Vector2( 188, 36 )
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decoração/Mesas de salgadinho"]
+position = Vector2( 188, 38 )
+shape = SubResource( 16 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Decoração/Mesas de salgadinho"]
+position = Vector2( 300, 48 )
+shape = SubResource( 16 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Decoração/Mesas de salgadinho"]
+position = Vector2( 171, 184 )
+shape = SubResource( 16 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Decoração/Mesas de salgadinho"]
+position = Vector2( 65, 173 )
+shape = SubResource( 16 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Decoração/Mesas de salgadinho"]
+position = Vector2( 69, 86 )
+shape = SubResource( 16 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Decoração/Mesas de salgadinho"]
+position = Vector2( 330, 182 )
+shape = SubResource( 16 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Decoração/Mesas de salgadinho"]
+position = Vector2( 331, 95 )
+shape = SubResource( 16 )
+
+[node name="Caixas de som" type="StaticBody2D" parent="Decoração"]
+
+[node name="Caixa de som" type="Sprite" parent="Decoração/Caixas de som"]
+position = Vector2( 272, 32 )
+texture = ExtResource( 16 )
+
+[node name="Caixa de som2" type="Sprite" parent="Decoração/Caixas de som"]
+position = Vector2( 96, 32 )
+texture = ExtResource( 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decoração/Caixas de som"]
+position = Vector2( 96, 34 )
+shape = SubResource( 17 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Decoração/Caixas de som"]
+position = Vector2( 272, 34 )
+shape = SubResource( 17 )
+
+[node name="Balões" type="StaticBody2D" parent="Decoração"]
+
+[node name="balão" type="Sprite" parent="Decoração/Balões"]
+position = Vector2( 113, 33 )
+texture = ExtResource( 14 )
+
+[node name="balão2" type="Sprite" parent="Decoração/Balões"]
+position = Vector2( 79, 33 )
+texture = ExtResource( 14 )
+
+[node name="balão3" type="Sprite" parent="Decoração/Balões"]
+position = Vector2( 221, 98 )
+texture = ExtResource( 14 )
+
+[node name="balão4" type="Sprite" parent="Decoração/Balões"]
+position = Vector2( 345, 81 )
+texture = ExtResource( 14 )
+
+[node name="balão5" type="Sprite" parent="Decoração/Balões"]
+position = Vector2( 247, 2 )
+texture = ExtResource( 14 )
+
+[node name="balão6" type="Sprite" parent="Decoração/Balões"]
+position = Vector2( 47, 167 )
+texture = ExtResource( 14 )
+
+[node name="balão7" type="Sprite" parent="Decoração/Balões"]
+position = Vector2( 189, 181 )
+texture = ExtResource( 14 )
+
+[node name="balão8" type="Sprite" parent="Decoração/Balões"]
+position = Vector2( 280, 195 )
+texture = ExtResource( 14 )
+
+[node name="balão9" type="Sprite" parent="Decoração/Balões"]
+position = Vector2( 345, 172 )
+texture = ExtResource( 14 )
+
+[node name="balão10" type="Sprite" parent="Decoração/Balões"]
+position = Vector2( 50, 77 )
+texture = ExtResource( 14 )
+
+[node name="balão11" type="Sprite" parent="Decoração/Balões"]
+position = Vector2( 288, 31 )
+texture = ExtResource( 14 )
+
+[node name="balão12" type="Sprite" parent="Decoração/Balões"]
+position = Vector2( 257, 26 )
+texture = ExtResource( 14 )
+
+[node name="balão13" type="Sprite" parent="Decoração/Balões"]
+position = Vector2( 41, 7 )
+texture = ExtResource( 14 )
+
+[node name="balão14" type="Sprite" parent="Decoração/Balões"]
+position = Vector2( 8, 41 )
+texture = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decoração/Balões"]
+position = Vector2( 41, 13 )
+shape = SubResource( 18 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Decoração/Balões"]
+position = Vector2( 8, 47 )
+shape = SubResource( 18 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Decoração/Balões"]
+position = Vector2( 79, 39 )
+shape = SubResource( 18 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Decoração/Balões"]
+position = Vector2( 50, 83 )
+shape = SubResource( 18 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Decoração/Balões"]
+position = Vector2( 47, 173 )
+shape = SubResource( 18 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Decoração/Balões"]
+position = Vector2( 189, 187 )
+shape = SubResource( 18 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Decoração/Balões"]
+position = Vector2( 280, 201 )
+shape = SubResource( 18 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Decoração/Balões"]
+position = Vector2( 345, 178 )
+shape = SubResource( 18 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Decoração/Balões"]
+position = Vector2( 345, 87 )
+shape = SubResource( 18 )
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Decoração/Balões"]
+position = Vector2( 288, 37 )
+shape = SubResource( 18 )
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Decoração/Balões"]
+position = Vector2( 257, 32 )
+shape = SubResource( 18 )
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Decoração/Balões"]
+position = Vector2( 247, 8 )
+shape = SubResource( 18 )
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Decoração/Balões"]
+position = Vector2( 113, 39 )
+shape = SubResource( 18 )
 
 [node name="Interativos" type="Node2D" parent="."]
 
@@ -389,6 +596,11 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interativos/porta_banheiro_chefe"]
 position = Vector2( 8, -327 )
 shape = SubResource( 8 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Interativos/porta_banheiro_chefe"]
+position = Vector2( -9, -320 )
+scale = Vector2( 2.24, 1 )
+occluder = SubResource( 19 )
 
 [node name="privada_chefe" type="StaticBody2D" parent="Interativos"]
 
@@ -407,13 +619,15 @@ shape = SubResource( 9 )
 position = Vector2( 145, -224 )
 texture = ExtResource( 4 )
 centered = false
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interativos/porta_banheiro_comum"]
 position = Vector2( 153, -215 )
 shape = SubResource( 8 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Interativos/porta_banheiro_comum"]
+position = Vector2( 139, -224 )
+scale = Vector2( 1.87228, 1 )
+occluder = SubResource( 20 )
 
 [node name="Objetos" type="TileMap" parent="."]
 tile_set = SubResource( 15 )
@@ -423,3 +637,7 @@ tile_data = PoolIntArray( -1966080, 3, 0, -1966078, 0, 0, -1966076, 3, 0, -19660
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color( 0.0313726, 0.0745098, 0.129412, 0.980392 )
