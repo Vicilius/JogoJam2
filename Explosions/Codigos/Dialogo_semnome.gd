@@ -6,6 +6,7 @@ export(float) var textSpeed = 0.05
 
 var dialog
 
+var TextNum = 0
 var phraseNum = 0
 var finished = false
 
@@ -19,13 +20,15 @@ func _ready():
 	
 func _process(delta):
 	
-	if(get_parent().get_node("Player").position.x -192 >= get_parent().get_node("Player").get_node("Camera2D").limit_left
-	&& get_parent().get_node("Player").position.x +192 <= get_parent().get_node("Player").get_node("Camera2D").limit_right):
-		margin_left = get_parent().get_node("Player").position.x - 190
 	
-	if(get_parent().get_node("Player").position.y -108 >= get_parent().get_node("Player").get_node("Camera2D").limit_top
-	&& get_parent().get_node("Player").position.y +108 <= get_parent().get_node("Player").get_node("Camera2D").limit_bottom) :
-		margin_top = get_parent().get_node("Player").position.y - 100
+	
+	#if(get_parent().get_node("Player").position.x -192 >= get_parent().get_node("Player").get_node("Camera2D").limit_left
+	#&& get_parent().get_node("Player").position.x +192 <= get_parent().get_node("Player").get_node("Camera2D").limit_right):
+	#	margin_left = get_parent().get_node("Player").position.x - 190
+	#
+	#if(get_parent().get_node("Player").position.y -108 >= get_parent().get_node("Player").get_node("Camera2D").limit_top
+	#&& get_parent().get_node("Player").position.y +108 <= get_parent().get_node("Player").get_node("Camera2D").limit_bottom) :
+	#	margin_top = get_parent().get_node("Player").position.y - 100
 	
 	
 	$TextureRect/AnimatedSprite.visible = finished
@@ -59,7 +62,7 @@ func getDialog() -> Array:
 		
 
 func nextPhrase() -> void:
-	if phraseNum >= len(dialog):
+	if phraseNum >= len(dialog[TextNum]):
 		queue_free()
 		return
 		
@@ -72,7 +75,6 @@ func nextPhrase() -> void:
 	
 	
 	
-	#get_tree().change_scene("res://Dialogo/Dialogo_1.json")
 	
 	while $TextureRect/Label.visible_characters < len($TextureRect/Label.text):
 		$TextureRect/Label.visible_characters += 1

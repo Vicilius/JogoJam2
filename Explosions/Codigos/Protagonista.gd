@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+var fade
+
 const ACCELERACAO = 120
 var speed = Vector2.ZERO
 var slp = false
@@ -7,6 +9,11 @@ var slpng = false
 var wkng = false
 var walking = false
 var left = false
+
+var npc = ""
+
+var item1 = false
+var sitem1 = false
 
 func _ready():
 	
@@ -16,7 +23,7 @@ func _ready():
 	$Camera2D.limit_right = tilemap_rect.end.x * tilemap_cell.x
 	$Camera2D.limit_top = tilemap_rect.position.y * tilemap_cell.y
 	$Camera2D.limit_bottom = tilemap_rect.end.y * tilemap_cell.y
-	
+	fade = get_parent().get_node("Fade").get_node("AnimationPlayer")
 	pass
 
 func _physics_process(delta):
@@ -58,8 +65,17 @@ func _physics_process(delta):
 			$AnimatedSprite.play("run")
 	if wkng == false:
 		move_and_slide(speed)
+		
+	item_collect()
 	pass
 
+func item_collect():
+	if Input.is_action_just_pressed("select"):
+		if sitem1 == true:
+			sitem1 = false
+			fade.play("Fade")
+			item1 = true
+			
 func _input(event):
 	if event.is_pressed():
 		walking = true
@@ -75,4 +91,15 @@ func _on_sono_timeout():
 func _on_awake_timeout():
 	wkng = false
 	slp = false
+	pass # Replace with function body.
+
+
+func _on_Area2D_area_entered(area):
+	
+	if area.name == "area_personagem":
+		npc = area.get_parent().get_node("AnimatedSprite").animation
+	
+	if area.name == "area_armario":
+		sitem1 = true
+	
 	pass # Replace with function body.
