@@ -15,10 +15,10 @@
 [ext_resource path="res://Codigos/Protagonista.gd" type="Script" id=13]
 [ext_resource path="res://Artes/Luz.png" type="Texture" id=14]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 radius = 6.08276
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 7 ), ExtResource( 11 ) ],
 "loop": true,
@@ -30,15 +30,15 @@ animations = [ {
 "name": "awake",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 8 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "sleep",
-"speed": 3.0
-}, {
 "frames": [ ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "run",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 8 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "sleep",
+"speed": 3.0
 } ]
 
 [sub_resource type="CircleShape2D" id=3]
@@ -48,10 +48,10 @@ radius = 20.0
 script = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 animation = "idle"
 playing = true
 
@@ -89,3 +89,4 @@ current = true
 position = Vector2( -108, -8 )
 [connection signal="timeout" from="sono" to="." method="_on_sono_timeout"]
 [connection signal="timeout" from="awake" to="." method="_on_awake_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

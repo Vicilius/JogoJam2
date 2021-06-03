@@ -1,4 +1,10 @@
 [
+<<<<<<< HEAD
+	"Text": {"AAAAAAAAAAAAAAAAAA"}
+]
+	
+=======
     {"Name":"Teste", "Text":"teste de cu pequeno."},
     {"Name":"Teste", "Text":"espero que funcione aaaaaaaaaaaa."}
 ]
+>>>>>>> 345d943437629efcb1b6bab531ffbf63283f8cbd

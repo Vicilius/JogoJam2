@@ -1,0 +1,37 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Artes/Personagens/Beholder/Eye1.png" type="Texture" id=1]
+[ext_resource path="res://Artes/Personagens/Beholder/Eye2.png" type="Texture" id=2]
+[ext_resource path="res://Artes/Personagens/Beholder/Eye3.png" type="Texture" id=3]
+[ext_resource path="res://Artes/Personagens/Beholder/Eye4.png" type="Texture" id=4]
+[ext_resource path="res://Artes/Personagens/Beholder/Eye5.png" type="Texture" id=5]
+[ext_resource path="res://Artes/Personagens/Beholder/Eye6.png" type="Texture" id=6]
+[ext_resource path="res://Cenas/Area2D.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Cenas/Npcs.gd" type="Script" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "beholder",
+"speed": 8.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 5.0
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource( 8 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "beholder"
+frame = 3
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="area_personagem" parent="." instance=ExtResource( 7 )]
+[connection signal="area_entered" from="area_personagem" to="." method="_on_area_personagem_area_entered"]
+[connection signal="area_exited" from="area_personagem" to="." method="_on_area_personagem_area_exited"]
