@@ -56,6 +56,7 @@ margin_right = 314.0
 margin_bottom = 68.5
 custom_fonts/font = SubResource( 1 )
 text = "aaaa"
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -71,7 +72,6 @@ texture = ExtResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="TextureRect"]
 position = Vector2( 304, 56 )
 frames = SubResource( 2 )
-frame = 1
 playing = true
 
 [node name="Label" type="Label" parent="."]

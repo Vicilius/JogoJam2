@@ -1,7 +1,7 @@
 extends Control
 
 
-var dialogPath = "res://Dialogo/Dialogo_1.json"
+var dialogPath = "res://Dialogo/Dialog1.json"
 export(float) var textSpeed = 0.05
 
 var dialog
@@ -62,7 +62,7 @@ func getDialog() -> Array:
 		
 
 func nextPhrase() -> void:
-	if phraseNum >= len(dialog[TextNum]):
+	if phraseNum >= len(dialog):
 		queue_free()
 		return
 		
