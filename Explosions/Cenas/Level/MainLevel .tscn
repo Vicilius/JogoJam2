@@ -592,6 +592,7 @@ occluder = SubResource( 17 )
 
 [node name="PortaChefe" parent="Interativos" instance=ExtResource( 19 )]
 position = Vector2( 8, -328 )
+item = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Interativos/PortaChefe"]
 occluder = SubResource( 18 )

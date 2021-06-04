@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var fade
+var pfade = false
 
 const ACCELERACAO = 120
 var speed = Vector2.ZERO
@@ -76,11 +77,14 @@ func item_collect():
 	if Input.is_action_just_pressed("select"):
 		if sitem1 == true:
 			sitem1 = false
+			item1 = true
+			pfade = true
+			
+		if pfade == true:
 			$Interact.start()
 			talking = true
 			fade.play("Fade")
-			item1 = true
-			
+			pfade = false
 			
 func _input(event):
 	if event.is_pressed():
@@ -107,7 +111,10 @@ func _on_Area2D_area_entered(area):
 	
 	if area.name == "area_armario":
 		sitem1 = true
-	
+	if area.name == "area_porta":
+		if area.get_parent().item == false:
+			if item1 == true:
+				pfade = true
 	
 	pass # Replace with function body.
 
