@@ -1,18 +1,27 @@
 [
-   
-    {"Text":"..."},
-    {"Text":"....."},
-    {"Text":"Você troca os canais da televisão procurando por algo interessante que fisgue sua mente"},
-    {"Text":"A televisão emite um sinal holográfico forma uma figura"}
-    
-
-
-    
-
-
-
-
-
-    
+	"beholder"{	 
+		{
+		"Name": "Beholder",
+		"Text":"..."
+		},
+		
+		{
+		"Name": "Beholder",
+		"Text":"....."
+		},
+		
+		{
+		"Name": "Beholder",
+		"Text":"Você troca os canais da televisão procurando por algo interessante que fisgue sua mente"
+		},
+		
+		{
+		"Name": "Beholder",
+		"Text":"A televisão emite um sinal holográfico forma uma figura"
+		}
+	},
+	"cogumelo"{
+		{"Name": "Cogumelo", "Text":"Essa festa não podia ficar pior"},
+	}	
 
 ]

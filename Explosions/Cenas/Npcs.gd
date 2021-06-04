@@ -4,6 +4,8 @@ extends StaticBody2D
 export var f = true
 var fliped = false
 
+export var npc = ""
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,6 +15,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	$AnimatedSprite.play(npc)
 	$AnimatedSprite.flip_h = fliped
 	pass
 

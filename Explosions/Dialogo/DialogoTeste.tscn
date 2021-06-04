@@ -1,0 +1,119 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Control.gd" type="Script" id=1]
+[ext_resource path="res://Artes/Dialogo/Caixa de texto.png" type="Texture" id=2]
+[ext_resource path="res://Fontes/dogicapixel.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Artes/UI/TimerShow.png" type="Texture" id=4]
+[ext_resource path="res://Artes/Personagens/Portraits/BehoPortrait.png" type="Texture" id=5]
+[ext_resource path="res://Artes/Personagens/Portraits/CoguPortrait.png" type="Texture" id=6]
+
+[sub_resource type="CanvasItemMaterial" id=8]
+light_mode = 1
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "Golem",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Frank",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "Cogumelo",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Beholder",
+"speed": 5.0
+} ]
+
+[sub_resource type="CanvasItemMaterial" id=3]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id=4]
+light_mode = 1
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="CanvasItemMaterial" id=5]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id=6]
+light_mode = 1
+
+[sub_resource type="DynamicFont" id=2]
+size = 8
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Portrait" type="AnimatedSprite" parent="."]
+material = SubResource( 8 )
+position = Vector2( 88, 88 )
+frames = SubResource( 7 )
+animation = "Frank"
+
+[node name="Caixa de texto" type="Sprite" parent="."]
+material = SubResource( 3 )
+position = Vector2( 192, 176 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="."]
+material = SubResource( 4 )
+margin_left = 40.0
+margin_top = 160.0
+margin_right = 344.0
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 1 )
+text = "CCCC"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="NomeShow" type="Sprite" parent="."]
+material = SubResource( 5 )
+position = Vector2( 80, 136 )
+scale = Vector2( 1.32759, 1.7 )
+texture = ExtResource( 4 )
+
+[node name="Nome" type="Label" parent="."]
+material = SubResource( 6 )
+margin_left = 48.0
+margin_top = 128.0
+margin_right = 104.0
+margin_bottom = 144.0
+custom_fonts/font = SubResource( 2 )
+text = "Beholder"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="wait" type="Timer" parent="."]
+one_shot = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="wait" to="." method="_on_wait_timeout"]

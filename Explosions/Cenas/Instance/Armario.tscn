@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Artes/Tiles e Cenario/Escritorio/Armario/Wardrobe1.png" type="Texture" id=1]
+[ext_resource path="res://Artes/Tiles e Cenario/Escritorio/Armario/Wardrobe2.png" type="Texture" id=2]
+[ext_resource path="res://Cenas/Instance/Area2D.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Codigos/armario_funcionarios.gd" type="Script" id=4]
+
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "close",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "open",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 5, 7 )
+
+[node name="Armario" type="StaticBody2D"]
+script = ExtResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "close"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="area_armario" parent="." instance=ExtResource( 3 )]
+[connection signal="area_entered" from="area_armario" to="." method="_on_area_armario_area_entered"]
+[connection signal="area_exited" from="area_armario" to="." method="_on_area_armario_area_exited"]

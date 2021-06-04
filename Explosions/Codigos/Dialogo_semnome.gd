@@ -46,23 +46,23 @@ func _process(delta):
 			$TextureRect/Label.visible_characters = len($TextureRect/Label.text)
 			
 
-func getDialog() -> Array:
+func getDialog() -> Dictionary:
 	var f = File.new()
 	assert(f.file_exists(dialogPath), "File Path does not exist")
 	
 	f.open(dialogPath, File.READ)
-	var json = f.get_as_text()
+	var json = JSON.parse(f.get_as_text())
 	
-	var output = parse_json(json)
+	var output = json.result
 	
-	if typeof(output) == TYPE_ARRAY:
+	if typeof(output) == TYPE_DICTIONARY:
 		return output
 	else:
-		return []
+		return {}
 		
 
 func nextPhrase() -> void:
-	if phraseNum >= len(dialog):
+	if phraseNum >= len(dialog["beholder"]):
 		queue_free()
 		return
 		

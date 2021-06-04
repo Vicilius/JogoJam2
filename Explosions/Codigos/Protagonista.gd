@@ -11,11 +11,14 @@ var walking = false
 var left = false
 
 var npc = ""
+var talking = false
 
 var item1 = false
 var sitem1 = false
 
 func _ready():
+	
+	$Interact.wait_time = 1.5
 	
 	var tilemap_rect = get_parent().get_node("TileMap").get_used_rect()
 	var tilemap_cell = get_parent().get_node("TileMap").cell_size
@@ -63,7 +66,7 @@ func _physics_process(delta):
 				slp = false
 		else:
 			$AnimatedSprite.play("run")
-	if wkng == false:
+	if wkng == false && talking == false:
 		move_and_slide(speed)
 		
 	item_collect()
@@ -73,8 +76,11 @@ func item_collect():
 	if Input.is_action_just_pressed("select"):
 		if sitem1 == true:
 			sitem1 = false
+			$Interact.start()
+			talking = true
 			fade.play("Fade")
 			item1 = true
+			
 			
 func _input(event):
 	if event.is_pressed():
@@ -96,10 +102,24 @@ func _on_awake_timeout():
 
 func _on_Area2D_area_entered(area):
 	
-	if area.name == "area_personagem":
+	if area.name == "area_npc":
 		npc = area.get_parent().get_node("AnimatedSprite").animation
 	
 	if area.name == "area_armario":
 		sitem1 = true
 	
+	
+	pass # Replace with function body.
+
+
+func _on_Area2D_area_exited(area):
+	if area.name == "area_npc":
+		npc = ""
+	if area.name == "area_armario":
+		sitem1 = false
+	pass # Replace with function body.
+
+
+func _on_Interact_timeout():
+	talking = false
 	pass # Replace with function body.
