@@ -6,7 +6,7 @@ var minutes = 0
 var seconds = 0
 
 func _ready():
-	$Timer.set_wait_time(5*60)
+	$Timer.set_wait_time(5 * 60)
 	$Timer.start()
 
 
@@ -22,6 +22,12 @@ func _process(delta):
 		
 	if player.item1 == true:
 		$Item1.visible = true
+	if player.item2 == true:
+		$Item2.visible = true
+	if player.item3 == true:
+		$Item3.visible = true
+	if player.item4 == true:
+		$Item4.visible = true
 	show_timer()
 
 func show_timer():
@@ -30,5 +36,7 @@ func show_timer():
 	$TimerShow/Label.set_text(str(minutes))
 
 func _on_Timer_timeout():
-	print("GAME OVER")
+	get_parent().get_node("Fade").get_node("AnimationPlayer").play("Fade")
+	yield(get_tree().create_timer(1),"timeout")
+	get_tree().change_scene("res://Cenas/Level/GameOver.tscn")
 	pass # Replace with function body.

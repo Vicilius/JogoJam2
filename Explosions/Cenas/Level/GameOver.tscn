@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Artes/Telas/Marcador.png" type="Texture" id=1]
+[ext_resource path="res://Artes/Telas/GameOver.png" type="Texture" id=2]
+[ext_resource path="res://Codigos/GameOver.gd" type="Script" id=3]
+[ext_resource path="res://Artes/Telas/Confirma.png" type="Texture" id=4]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="GameOver" type="Sprite" parent="."]
+position = Vector2( 192, 108 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Marcador" type="Sprite" parent="."]
+position = Vector2( 149, 194 )
+texture = ExtResource( 1 )
+
+[node name="Confirma" type="Sprite" parent="Marcador"]
+visible = false
+position = Vector2( 24, -5 )
+texture = ExtResource( 4 )

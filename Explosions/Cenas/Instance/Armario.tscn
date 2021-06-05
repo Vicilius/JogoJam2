@@ -5,7 +5,6 @@
 [ext_resource path="res://Cenas/Instance/Area2D.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Codigos/armario_funcionarios.gd" type="Script" id=4]
 
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ) ],

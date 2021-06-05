@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Cenas/Instance/Area2D.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Artes/Tiles e Cenario/Escritorio/BanheiroChefe.png" type="Texture" id=2]
+[ext_resource path="res://Codigos/Privada.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 6.0
 
 [node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -16,3 +18,5 @@ position = Vector2( 0, 1 )
 shape = SubResource( 1 )
 
 [node name="area_privada" parent="." instance=ExtResource( 1 )]
+[connection signal="area_entered" from="area_privada" to="." method="_on_area_privada_area_entered"]
+[connection signal="area_exited" from="area_privada" to="." method="_on_area_privada_area_exited"]

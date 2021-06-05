@@ -13,12 +13,21 @@ var left = false
 
 var npc = ""
 var talking = false
-
+#pé de cabra no armario
 var item1 = false
 var sitem1 = false
+#desentupidor no banheiro
+var item2 = false
+var sitem2 = false
+#alicate do lado da mesa da gerente
+var item3 = false
+var sitem3 = false
+#chave do lado da mesa do chefe
+var item4 = false
+var sitem4 = false
 
 func _ready():
-	
+	$CanvasModulate.visible = true
 	$Interact.wait_time = 1.5
 	
 	var tilemap_rect = get_parent().get_node("TileMap").get_used_rect()
@@ -71,21 +80,62 @@ func _physics_process(delta):
 		move_and_slide(speed)
 		
 	item_collect()
+	change_text()
+	
 	pass
+
+func change_text():
+	if npc != "":
+		if Input.is_action_just_pressed("select"):
+			yield(get_tree().create_timer(1),"timeout")
+			npc = ""
 
 func item_collect():
 	if Input.is_action_just_pressed("select"):
 		if sitem1 == true:
 			sitem1 = false
+			$Interact.start()
+			talking = true
+			fade.play("Fade")
+			pfade = false
+			yield(get_tree().create_timer(1),"timeout")
 			item1 = true
-			pfade = true
+		
+		if sitem2 == true:
+			sitem2 = false
+			$Interact.start()
+			talking = true
+			fade.play("Fade")
+			pfade = false
+			yield(get_tree().create_timer(1),"timeout")
+			item2 = true
+		
+		if sitem3 == true:
+			sitem3 = false
+			$Interact.start()
+			talking = true
+			fade.play("Fade")
+			pfade = false
+			yield(get_tree().create_timer(1),"timeout")
+			item3 = true
+			
+		if sitem4 == true:
+			sitem4 = false
+			$Interact.start()
+			talking = true
+			fade.play("Fade")
+			pfade = false
+			yield(get_tree().create_timer(1),"timeout")
+			item4 = true
 			
 		if pfade == true:
 			$Interact.start()
 			talking = true
 			fade.play("Fade")
 			pfade = false
-			
+	
+	
+	
 func _input(event):
 	if event.is_pressed():
 		walking = true
@@ -109,12 +159,39 @@ func _on_Area2D_area_entered(area):
 	if area.name == "area_npc":
 		npc = area.get_parent().get_node("AnimatedSprite").animation
 	
+	if area.get_parent().name == "interagir":
+		npc = area.name
+		
 	if area.name == "area_armario":
 		sitem1 = true
+	if area.name == "area_desentupidor":
+		sitem2 = true
+	if area.name == "area_escrivaninha":
+		if area.get_parent().chefe == true:
+			sitem4 = true
+		else:
+			sitem3 = true
 	if area.name == "area_porta":
 		if area.get_parent().item == false:
 			if item1 == true:
 				pfade = true
+			else:
+				npc = "Porta"
+		else:
+			if item4 == true:
+				pfade = true
+			else:
+				npc = "Porta"
+	if area.name == "area_privada":
+		if item2 == true:
+			pfade = true
+		else:
+			npc = "Privada"
+	if area.name == "area_bomba":
+		if item3 == true:
+			pfade = true
+		else:
+			npc = "Bomba"
 	
 	pass # Replace with function body.
 
@@ -124,6 +201,29 @@ func _on_Area2D_area_exited(area):
 		npc = ""
 	if area.name == "area_armario":
 		sitem1 = false
+	if area.name == "area_desentupidor":
+		sitem2 = false
+	if area.name == "area_escrivaninha":
+		if area.get_parent().chefe == true:
+			sitem4 = false
+		else:
+			sitem3 = false
+	if area.name == "area_porta":
+		if area.get_parent().item == false:
+			pfade = false
+			npc = ""
+		else:
+			pfade = false
+			npc = ""
+	if area.name == "area_bomba":
+		pfade = false
+		npc = ""
+		
+	if area.get_parent().name == "interagir":
+		npc = ""
+	if area.name == "area_privada":
+		pfade = false
+		npc = ""
 	pass # Replace with function body.
 
 

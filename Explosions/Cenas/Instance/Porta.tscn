@@ -18,3 +18,4 @@ shape = SubResource( 1 )
 
 [node name="area_porta" parent="." instance=ExtResource( 1 )]
 [connection signal="area_entered" from="area_porta" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="area_porta" to="." method="_on_area_porta_area_exited"]

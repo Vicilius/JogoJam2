@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Control.gd" type="Script" id=1]
 [ext_resource path="res://Artes/Dialogo/Caixa de texto.png" type="Texture" id=2]
@@ -6,13 +6,21 @@
 [ext_resource path="res://Artes/UI/TimerShow.png" type="Texture" id=4]
 [ext_resource path="res://Artes/Personagens/Portraits/BehoPortrait.png" type="Texture" id=5]
 [ext_resource path="res://Artes/Personagens/Portraits/CoguPortrait.png" type="Texture" id=6]
+[ext_resource path="res://Artes/Personagens/Portraits/GolemPortrait.png" type="Texture" id=7]
+[ext_resource path="res://Artes/Personagens/Portraits/VampiPortrait.png" type="Texture" id=8]
+[ext_resource path="res://Artes/Personagens/Portraits/GhostPortrait.png" type="Texture" id=9]
 
-[sub_resource type="CanvasItemMaterial" id=8]
+[sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 1
 
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [  ],
+"loop": true,
+"name": ".",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "Golem",
 "speed": 5.0
@@ -31,6 +39,21 @@ animations = [ {
 "loop": true,
 "name": "Beholder",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "Fantasma",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "Vampira",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Lapis",
+"speed": 5.0
 } ]
 
 [sub_resource type="CanvasItemMaterial" id=3]
@@ -39,19 +62,19 @@ light_mode = 1
 [sub_resource type="CanvasItemMaterial" id=4]
 light_mode = 1
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=5]
 size = 8
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 3 )
 
-[sub_resource type="CanvasItemMaterial" id=5]
-light_mode = 1
-
 [sub_resource type="CanvasItemMaterial" id=6]
 light_mode = 1
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="CanvasItemMaterial" id=7]
+light_mode = 1
+
+[sub_resource type="DynamicFont" id=8]
 size = 8
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
@@ -66,10 +89,10 @@ __meta__ = {
 }
 
 [node name="Portrait" type="AnimatedSprite" parent="."]
-material = SubResource( 8 )
+material = SubResource( 1 )
 position = Vector2( 88, 88 )
-frames = SubResource( 7 )
-animation = "Frank"
+frames = SubResource( 2 )
+animation = "."
 
 [node name="Caixa de texto" type="Sprite" parent="."]
 material = SubResource( 3 )
@@ -85,7 +108,7 @@ margin_left = 40.0
 margin_top = 160.0
 margin_right = 344.0
 margin_bottom = 192.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 5 )
 text = "CCCC"
 autowrap = true
 __meta__ = {
@@ -95,18 +118,18 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="."]
 
 [node name="NomeShow" type="Sprite" parent="."]
-material = SubResource( 5 )
+material = SubResource( 6 )
 position = Vector2( 80, 136 )
 scale = Vector2( 1.32759, 1.7 )
 texture = ExtResource( 4 )
 
 [node name="Nome" type="Label" parent="."]
-material = SubResource( 6 )
+material = SubResource( 7 )
 margin_left = 48.0
 margin_top = 128.0
 margin_right = 104.0
 margin_bottom = 144.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 8 )
 text = "Beholder"
 valign = 1
 __meta__ = {
