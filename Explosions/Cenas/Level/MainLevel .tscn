@@ -687,6 +687,9 @@ position = Vector2( 40, -409 )
 [node name="Caixa" parent="interagir" instance=ExtResource( 22 )]
 position = Vector2( 377, 24 )
 
+[node name="Caixa2" parent="interagir" instance=ExtResource( 22 )]
+position = Vector2( 376, -456 )
+
 [node name="Placa1" parent="interagir" instance=ExtResource( 22 )]
 position = Vector2( 90, -6 )
 

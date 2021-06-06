@@ -7,7 +7,7 @@
 [ext_resource path="res://Artes/Personagens/Beholder/Eye5.png" type="Texture" id=5]
 [ext_resource path="res://Artes/Personagens/Beholder/Eye6.png" type="Texture" id=6]
 [ext_resource path="res://Cenas/Instance/Area2D.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Cenas/Npcs.gd" type="Script" id=8]
+[ext_resource path="res://Codigos/Npcs.gd" type="Script" id=8]
 [ext_resource path="res://Artes/Personagens/Cogumelo/Mushroon5.png" type="Texture" id=9]
 [ext_resource path="res://Artes/Personagens/Cogumelo/Mushroon3.png" type="Texture" id=10]
 [ext_resource path="res://Artes/Personagens/Cogumelo/Mushroon1.png" type="Texture" id=11]
@@ -38,6 +38,7 @@
 [ext_resource path="res://Artes/Personagens/Lapis/Lapis2.png" type="Texture" id=36]
 [ext_resource path="res://Artes/Personagens/Lapis/Lapis4.png" type="Texture" id=37]
 [ext_resource path="res://Artes/Personagens/Lapis/Lapis1.png" type="Texture" id=38]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {

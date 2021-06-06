@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://Control.gd" type="Script" id=1]
+[ext_resource path="res://Codigos/Control.gd" type="Script" id=1]
 [ext_resource path="res://Artes/Dialogo/Caixa de texto.png" type="Texture" id=2]
 [ext_resource path="res://Fontes/dogicapixel.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Artes/UI/TimerShow.png" type="Texture" id=4]
@@ -40,11 +40,6 @@ animations = [ {
 "name": "Beholder",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "Fantasma",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "Vampira",
@@ -53,6 +48,11 @@ animations = [ {
 "frames": [  ],
 "loop": true,
 "name": "Lapis",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "Fantasma",
 "speed": 5.0
 } ]
 

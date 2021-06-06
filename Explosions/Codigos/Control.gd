@@ -74,6 +74,9 @@ var dialogos = {
 			"Me pergunto o que teria nessas caixas...",
 			"Melhor não pensar muito nisso."
 	],
+	"Caixa2": [
+			"Essas caixas são realmente muito estranhas..."
+	],
 	"Estante": [
 			"Uma estante na sala dos funcionários?!",
 			"E tudo aqui são cadernos?!",
@@ -94,9 +97,12 @@ func _process(delta):
 			get_parent().get_parent().get_node("Player").talking = true
 			$Nome.text = get_parent().get_parent().get_node("Player").npc
 			$NomeShow.visible = true
-			
+			$Nome.visible = true
 			npc =  get_parent().get_parent().get_node("Player").npc
 			$Portrait.play(npc)
+			if $Portrait.animation == ".":
+				$Nome.visible = false
+				$NomeShow.visible = false
 			
 	$Label.text = dialogos[npc][frase]
 	$Label.visible_characters = letra
