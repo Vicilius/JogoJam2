@@ -15,14 +15,20 @@ var dialogos = {
 	"": [""],
 	"Beholder": [
 			"AAAAAA",
-			"Eu não aguento mais!!!"
+			"Uma bomba, não é possível!",
+			"É meu ultimo més trabalhando aqui e eles resolvem meter uma BOMBA!"
 		],
 	"Cogumelo": [
 			"Merdaaaaaaaaa!!!!"
 		],
 	"Golem": [
 			"Eae, eu sou o zelador daqui!",
-			"Quer ouvir do meu rpg sobre LÁPIS?!"
+			"Quer ouvir do meu rpg sobre LÁPIS?!",
+			"Ah você quer saber onde ta a chave do banheiro?",
+			"Se eu não me engano eu deixei ela no escritório do chefe",
+			"Mas quem sabe um goblin não roubou ela?!",
+			"Brincadeirinha",
+			"Ou não...."
 		],
 	"Frank": [
 			"Eu sou o Frank, sou segurança aqui...",
