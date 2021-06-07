@@ -2,6 +2,7 @@ extends Node2D
 
 var selection = 0
 
+
 func _input(event):
 	if Input.is_action_just_pressed("ui_down"):
 		selection += 1

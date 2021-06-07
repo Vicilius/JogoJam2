@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Codigos/Control.gd" type="Script" id=1]
 [ext_resource path="res://Artes/Dialogo/Caixa de texto.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Artes/Personagens/Portraits/GolemPortrait.png" type="Texture" id=7]
 [ext_resource path="res://Artes/Personagens/Portraits/VampiPortrait.png" type="Texture" id=8]
 [ext_resource path="res://Artes/Personagens/Portraits/GhostPortrait.png" type="Texture" id=9]
+[ext_resource path="res://Artes/Personagens/Portraits/LapisPortrait.png" type="Texture" id=10]
+[ext_resource path="res://Artes/Personagens/Portraits/FrankPortrait.png" type="Texture" id=11]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 1
@@ -25,19 +27,9 @@ animations = [ {
 "name": "Golem",
 "speed": 5.0
 }, {
-"frames": [  ],
-"loop": true,
-"name": "Frank",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "Cogumelo",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "Beholder",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
@@ -45,7 +37,7 @@ animations = [ {
 "name": "Vampira",
 "speed": 5.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "Lapis",
 "speed": 5.0
@@ -53,6 +45,16 @@ animations = [ {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "Fantasma",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Beholder",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "Frank",
 "speed": 5.0
 } ]
 
