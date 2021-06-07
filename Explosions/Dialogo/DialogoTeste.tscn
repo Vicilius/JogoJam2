@@ -20,26 +20,6 @@ animations = [ {
 "name": ".",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "Golem",
-"speed": 5.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "Frank",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "Cogumelo",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "Beholder",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "Vampira",
@@ -48,6 +28,26 @@ animations = [ {
 "frames": [  ],
 "loop": true,
 "name": "Lapis",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "Golem",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "Cogumelo",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Frank",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Beholder",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ) ],
