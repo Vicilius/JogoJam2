@@ -87,6 +87,12 @@ var dialogos = {
 			"Uma estante na sala dos funcionários?!",
 			"E tudo aqui são cadernos?!",
 			"O que ta acontecendo nessa empresa??"
+	], 
+	"Estante2": [
+			"Tem um caderno fora do lugar aqui...",
+			"''Hurry and no one blows'' ?",
+			"Uma aventura por... Golem?",
+			"Parece que alguém tá aproveitando bem o intervalo na empresa."
 	]
 	
 		}
