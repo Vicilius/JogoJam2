@@ -13,7 +13,8 @@ func _process(delta):
 	if disposto == true:
 		if get_parent().get_parent().get_node("Player").item3 == true:
 			if Input.is_action_just_pressed("select"):
-				queue_free()
+				yield(get_tree().create_timer(1), "timeout")
+				get_tree().change_scene("res://Cenas/Level/WinScreen.tscn")
 
 	pass
 

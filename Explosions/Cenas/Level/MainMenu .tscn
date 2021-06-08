@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Artes/Telas/MainMenu.png" type="Texture" id=1]
+[ext_resource path="res://Artes/Telas/Marcador.png" type="Texture" id=2]
+[ext_resource path="res://Artes/Telas/Confirma.png" type="Texture" id=3]
+[ext_resource path="res://Codigos/MainMenu .gd" type="Script" id=4]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="MainMenu" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Marcador" type="Sprite" parent="."]
+position = Vector2( 34, 162 )
+texture = ExtResource( 2 )
+
+[node name="Confirma" type="Sprite" parent="Marcador"]
+visible = false
+position = Vector2( 21, -1 )
+texture = ExtResource( 3 )

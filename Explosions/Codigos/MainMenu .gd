@@ -19,9 +19,11 @@ func _input(event):
 			get_tree().change_scene("res://Cenas/Level/MainLevel .tscn")
 		elif selection == 1:
 			yield(get_tree().create_timer(0.1),"timeout")
-			get_tree().change_scene("res://Cenas/Level/MainMenu .tscn")
+			get_tree().quit()
+		
+func _process(delta):
 	if selection == 0:
-		$Marcador.position = Vector2(149,164)
+		$Marcador.position = Vector2(34,138)
 	else:
-		$Marcador.position = Vector2(149,194)
+		$Marcador.position = Vector2(34,162)
 
